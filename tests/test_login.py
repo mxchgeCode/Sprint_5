@@ -8,7 +8,7 @@ from data.data import PersonData
 
 class TestStellarBurgersLoginLogoutForm:
 
-    def test_login_correct_email_and_password_show_main_page(self, login):
+    def test_login_correct_email_and_password_show_main_page(self, login, driver):
         """ Переход на главную страницу """
         driver = login
 

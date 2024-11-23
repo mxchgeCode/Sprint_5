@@ -12,8 +12,8 @@ from data.data import PersonData
 @pytest.fixture
 def driver():
     options = Options()
-    options.add_argument("--window-size=1300,1200")
     driver = webdriver.Chrome(options=options)
+    driver.maximize_window()
     driver.get(Pages.url_main_paige)
     yield driver
     driver.quit()
@@ -30,4 +30,3 @@ def login(driver):
 
     WebDriverWait(driver, 3).until(EC.presence_of_element_located(MainPage.mn_order_button))
     return driver
-

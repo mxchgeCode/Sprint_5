@@ -3,7 +3,7 @@ from web_locators.locators import *
 
 class TestStellarBurgersConstructorForm:
 
-    def test_constructor_go_to_sauces_scroll_to_sauces(self, login):
+    def test_constructor_go_to_sauces_scroll_to_sauces(self, login, driver):
         """Проверка перехода на "Соусы" """
         driver = login
 
@@ -14,7 +14,7 @@ class TestStellarBurgersConstructorForm:
 
         assert h_sauce.text == 'Соусы'
 
-    def test_constructor_go_to_filling_scroll_to_filling(self, login):
+    def test_constructor_go_to_filling_scroll_to_filling(self, login, driver):
         """Проверка перехода на "Начинки" """
         driver = login
 
@@ -24,7 +24,7 @@ class TestStellarBurgersConstructorForm:
 
         assert h_filling.text == 'Начинки'
 
-    def test_constructor_go_to_bun_scroll_to_bun(self, login):
+    def test_constructor_go_to_bun_scroll_to_bun(self, login, driver):
         """Проверка перехода на "Булки" """
         driver = login
 
