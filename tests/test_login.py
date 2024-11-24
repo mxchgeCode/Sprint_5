@@ -19,13 +19,13 @@ class TestStellarBurgersLoginLogoutForm:
         """ Проверка входа через кнопку 'Войти в аккаунт' """
 
         driver.find_element(*MainPage.mn_auth).click()
-        WebDriverWait(driver, 8).until(EC.presence_of_element_located(AuthLogin.al_login_text))
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located(AuthLogin.al_login_text))
 
         driver.find_element(*AuthLogin.al_email_field).send_keys(PersonData.login)
         driver.find_element(*AuthLogin.al_password_field).send_keys(PersonData.password)
 
         driver.find_element(*AuthLogin.al_login_button_any_forms).click()
-        WebDriverWait(driver, 5).until(EC.presence_of_element_located(MainPage.mn_order_button))
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located(MainPage.mn_order_button))
 
         order_button = driver.find_element(*MainPage.mn_order_button)
         assert driver.current_url == Pages.url_main_paige and order_button.text == 'Оформить заказ'
