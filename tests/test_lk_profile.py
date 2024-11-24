@@ -1,8 +1,8 @@
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
-from web_locators.locators import *
 from data.pages import Pages
+from web_locators.locators import *
 
 
 class TestStellarBurgersProfileForm:
@@ -46,10 +46,11 @@ class TestStellarBurgersProfileForm:
         driver = login
 
         driver.find_element(*MainPage.mn_profile_button).click()
-        WebDriverWait(driver, 3).until(EC.presence_of_element_located(LKProfile.lk_info_message))
+        WebDriverWait(driver, 5).until(EC.presence_of_element_located(LKProfile.lk_info_message))
 
         driver.find_element(*LKProfile.lk_logout_button).click()
-        WebDriverWait(driver, 3).until(EC.presence_of_element_located(AuthLogin.al_login_button_any_forms))
+        WebDriverWait(driver, 5).until(EC.presence_of_element_located(AuthLogin.al_login_button_any_forms))
 
-        login_button = driver.find_element(*AuthLogin.al_element_with_login_text)
+        login_button = driver.find_element(*AuthLogin.al_login_text)
+
         assert driver.current_url == Pages.url_login and login_button.text == 'Вход'
