@@ -14,7 +14,7 @@ def driver():
     options = Options()
     driver = webdriver.Chrome(options=options)
     driver.maximize_window()
-    driver.get(Pages.url_main_paige)
+    driver.get(Pages.baseUrl)
     yield driver
     driver.quit()
 
@@ -29,4 +29,4 @@ def login(driver):
     driver.find_element(*AuthLogin.al_login_button_any_forms).click()
 
     WebDriverWait(driver, 3).until(EC.presence_of_element_located(MainPage.mn_order_button))
-    return driver
+    # return driver

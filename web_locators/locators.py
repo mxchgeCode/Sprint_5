@@ -55,3 +55,4 @@ class LKProfile:
                               ".//li[@class='Account_listItem__35dAP']/" \
                               "a[@class='Account_link__2ETsJ text text_type_main-medium text_color_inactive']")
     # кнопка История заказов в личном кабинете
+    h1_tag = (By.XPATH, ".//h1")

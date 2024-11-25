@@ -10,10 +10,9 @@ class TestStellarBurgersLoginLogoutForm:
 
     def test_login_correct_email_and_password_show_main_page(self, login, driver):
         """ Переход на главную страницу """
-        driver = login
 
         order_button = driver.find_element(*MainPage.mn_order_button)
-        assert driver.current_url == Pages.url_main_paige and order_button.text == 'Оформить заказ'
+        assert driver.current_url == Pages.baseUrl and order_button.text == 'Оформить заказ'
 
     def test_login_sign_in_button_show_login_page(self, driver):
         """ Проверка входа через кнопку 'Войти в аккаунт' """
@@ -28,7 +27,7 @@ class TestStellarBurgersLoginLogoutForm:
         WebDriverWait(driver, 10).until(EC.presence_of_element_located(MainPage.mn_order_button))
 
         order_button = driver.find_element(*MainPage.mn_order_button)
-        assert driver.current_url == Pages.url_main_paige and order_button.text == 'Оформить заказ'
+        assert driver.current_url == Pages.baseUrl and order_button.text == 'Оформить заказ'
 
     def test_login_personal_account_button_show_login_page(self, driver):
         """ Проверка входа через кнопку 'Личный Кабинет' """
@@ -43,7 +42,7 @@ class TestStellarBurgersLoginLogoutForm:
         WebDriverWait(driver, 8).until(EC.presence_of_element_located(MainPage.mn_order_button))
 
         order_button = driver.find_element(*MainPage.mn_order_button)
-        assert driver.current_url == Pages.url_main_paige and order_button.text == 'Оформить заказ'
+        assert driver.current_url == Pages.baseUrl and order_button.text == 'Оформить заказ'
 
     def test_login_registration_form_sign_in_button(self, driver):
         """ Проверка входа через кнопку 'Войти' на форме регистрации """
@@ -59,7 +58,7 @@ class TestStellarBurgersLoginLogoutForm:
         WebDriverWait(driver, 8).until(EC.presence_of_element_located(MainPage.mn_order_button))
 
         order_button = driver.find_element(*MainPage.mn_order_button)
-        assert driver.current_url == Pages.url_main_paige and order_button.text == 'Оформить заказ'
+        assert driver.current_url == Pages.baseUrl and order_button.text == 'Оформить заказ'
 
     def test_login_forgot_password_form_sign_in_button(self, driver):
         """ Проверка входа через кнопку 'Войти' на форме 'Восстановление пароля' """
@@ -75,4 +74,4 @@ class TestStellarBurgersLoginLogoutForm:
         WebDriverWait(driver, 8).until(EC.presence_of_element_located(MainPage.mn_order_button))
 
         order_button = driver.find_element(*MainPage.mn_order_button)
-        assert driver.current_url == Pages.url_main_paige and order_button.text == 'Оформить заказ'
+        assert driver.current_url == Pages.baseUrl and order_button.text == 'Оформить заказ'
